@@ -1,3 +1,28 @@
+/* Prevent countdown timer cutoff on mobile */
+@media (max-width: 640px) {
+    .countdown-timer {
+        overflow-x: auto;
+        padding-left: 8px;
+        padding-right: 8px;
+        min-width: 0;
+    }
+}
+/* Countdown timer width adjustment for mobile */
+@media (max-width: 640px) {
+    .countdown-timer {
+        max-width: 90vw;
+        width: 100%;
+        margin-left: auto;
+        margin-right: auto;
+        box-sizing: border-box;
+    }
+}
+/* Countdown timer font size adjustment for mobile */
+@media (max-width: 640px) {
+    .countdown-timer {
+        font-size: 1.25rem !important; /* Reduce font size for mobile */
+    }
+}
 /* Ripple effect for buttons */
 .ripple {
     position: relative;
