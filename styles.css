@@ -1,3 +1,46 @@
+/* Ripple effect for buttons */
+.ripple {
+    position: relative;
+    overflow: hidden;
+}
+.ripple:after {
+    content: '';
+    display: block;
+    position: absolute;
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+    left: 50%;
+    top: 50%;
+    pointer-events: none;
+    background: rgba(245, 158, 11, 0.3);
+    transform: translate(-50%, -50%) scale(0);
+    opacity: 0;
+    transition: transform 0.4s, opacity 0.8s;
+}
+.ripple:active:after {
+    transform: translate(-50%, -50%) scale(2.5);
+    opacity: 1;
+    transition: 0s;
+}
+
+/* Icon hover animation */
+.icon-animate {
+    transition: transform 0.2s cubic-bezier(.4,2,.6,1), color 0.2s;
+}
+.icon-animate:hover {
+    transform: scale(1.2) rotate(-8deg);
+    color: #f59e0b !important;
+}
+.glass-card {
+    background: rgba(255, 255, 255, 0.25);
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.18);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border-radius: 1rem;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    transition: box-shadow 0.3s, background 0.3s;
+}
 /* Custom Styles for THE REFORMIST Campaign Website */
 @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100;200;300;400;500;600;700;800;900&display=swap');
 
@@ -15,6 +58,11 @@
         opacity: 1;
         transform: translateY(0);
     }
+}
+
+/* Sticky Vote Now Button Animation */
+#stickyVoteBtn {
+    animation: fadeInUp 0.7s cubic-bezier(.4,2,.6,1);
 }
 
 @keyframes pulse-glow {

@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>THE REFORMIST - Akampurura Kennedy for Guild President</title>
+    <title>THE REFORMIST - Kenedy Akampuraa for Guild President</title>
     
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -43,7 +43,7 @@
                 
                 <!-- CTA Button -->
                 <button class="hidden md:block bg-amber-500 hover:bg-amber-600 text-white px-6 py-2 rounded-lg font-semibold transition pulse-glow">
-                    <i class="fas fa-heart mr-2"></i>Vote for Kennedy
+                    <i class="fas fa-heart mr-2 icon-animate"></i>Vote for Kennedy
                 </button>
                 
                 <!-- Mobile Menu Button -->
@@ -63,50 +63,86 @@
                 <a href="#team" class="block text-gray-700 hover:text-blue-900 py-2">Team</a>
                 <a href="#contact" class="block text-gray-700 hover:text-blue-900 py-2">Contact</a>
                 <button class="w-full bg-amber-500 hover:bg-amber-600 text-white px-6 py-2 rounded-lg font-semibold mt-2">
-                    Vote for Kennedy
+                    <i class="fas fa-heart mr-2 icon-animate"></i>Vote for Kennedy
                 </button>
             </div>
         </div>
     </nav>
     
     <!-- Hero Section -->
+
+        <!-- Sticky Vote Now Button (Mobile Only) -->
+        <a href="#vote" id="stickyVoteBtn" class="fixed bottom-4 left-1/2 -translate-x-1/2 z-50 w-[90vw] max-w-xs bg-amber-500 hover:bg-amber-600 text-white text-lg font-bold py-3 rounded-full shadow-lg flex items-center justify-center gap-2 transition-all duration-300 md:hidden" style="display: none;">
+            <i class="fas fa-vote-yea animate-bounce"></i>
+            Vote Now
+        </a>
     <section id="home" class="relative min-h-screen flex items-center justify-center overflow-hidden">
-        <!-- Background Image Placeholder -->
-        <div class="absolute inset-0 image-placeholder z-0">
-            <div class="w-full h-full flex items-center justify-center">
-                <div class="text-center">
-                    <i class="fas fa-image text-4xl mb-2 opacity-50"></i>
-                    <p class="opacity-50">Hero Image (1920x600px)</p>
-                </div>
-            </div>
+        <!-- Animated SVG Waves Background -->
+        <div class="absolute inset-0 z-0">
+            <svg class="w-full h-full absolute top-0 left-0" viewBox="0 0 1440 600" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+                <defs>
+                    <linearGradient id="heroGradient" x1="0" y1="0" x2="1" y2="1">
+                        <stop offset="0%" stop-color="#1e3a8a"/>
+                        <stop offset="100%" stop-color="#f59e0b"/>
+                    </linearGradient>
+                </defs>
+                <rect width="1440" height="600" fill="url(#heroGradient)"/>
+                <path d="M0,400 Q360,500 720,400 T1440,400 V600 H0 Z" fill="#fff" fill-opacity="0.08">
+                    <animate attributeName="d" dur="8s" repeatCount="indefinite"
+                        values="M0,400 Q360,500 720,400 T1440,400 V600 H0 Z;
+                                M0,420 Q360,380 720,420 T1440,420 V600 H0 Z;
+                                M0,400 Q360,500 720,400 T1440,400 V600 H0 Z"/>
+                </path>
+                <path d="M0,500 Q480,600 960,500 T1440,500 V600 H0 Z" fill="#fff" fill-opacity="0.12">
+                    <animate attributeName="d" dur="10s" repeatCount="indefinite"
+                        values="M0,500 Q480,600 960,500 T1440,500 V600 H0 Z;
+                                M0,520 Q480,480 960,520 T1440,520 V600 H0 Z;
+                                M0,500 Q480,600 960,500 T1440,500 V600 H0 Z"/>
+                </path>
+            </svg>
         </div>
-        
-        <!-- Overlay -->
+        <!-- Overlay for contrast -->
         <div class="absolute inset-0 bg-gradient-to-r from-blue-900/80 to-transparent z-10"></div>
-        
         <!-- Content -->
         <div class="relative z-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-white">
             <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
                 <div class="fade-in-up">
-                    <h1 class="text-5xl md:text-7xl font-black mb-4 leading-tight">
+                    <h1 class="text-5xl md:text-5xl font-black mb-4 leading-tight">
                         THE<br><span class="text-amber-400">REFORMIST</span>
                     </h1>
-                    <p class="text-xl md:text-2xl mb-8 text-gray-200">
+                    <p class="text-xl md:text-2xl mb-5 text-gray-200">
                         Reforming broken systems
                     </p>
-                    <p class="text-lg mb-8 text-gray-300 max-w-md">
-                        Akampurura Kennedy for 22nd Guild President, Kyambogo University. Let's build a better future together.
+                    <p class="text-lg mb-5 text-gray-300 max-w-md">
+                        <span class="block text-2xl md:text-3xl font-extrabold text-amber-500 drop-shadow-lg mb-2">Kenedy Akampuraa</span>
+                        <span class="block text-xl md:text-2xl font-bold text-amber-500 mb-2">for 22nd Guild President</span>
+                        <span class="block text-lg md:text-xl font-medium text-amber-500 mb-2">Kyambogo University</span>
+                        <span class="block text-base md:text-lg text-gray-200">Let's build a better future together.</span>
                     </p>
                     <div class="flex flex-col sm:flex-row gap-4">
                         <button class="bg-amber-500 hover:bg-amber-600 text-white px-8 py-4 rounded-lg font-bold text-lg transition transform hover:scale-105 pulse-glow">
-                            <i class="fas fa-check-circle mr-2"></i>Vote Now
+                            <i class="fas fa-check-circle mr-2 icon-animate"></i>Vote Now
                         </button>
                         <button class="border-2 border-white text-white hover:bg-white hover:text-blue-900 px-8 py-4 rounded-lg font-bold text-lg transition">
-                            <i class="fas fa-play-circle mr-2"></i>Watch Campaign Video
+                            <i class="fas fa-play-circle mr-2 icon-animate"></i>Watch Campaign Video
                         </button>
                     </div>
+                    <div class="mt-5">
+                        <div class="inline-block bg-white/20 rounded-xl px-6 py-4 shadow-lg backdrop-blur-md">
+                            <span class="block text-lg font-semibold text-amber-300 mb-1">Election Countdown</span>
+                            <div id="countdown" class="flex gap-4 justify-center text-2xl font-bold">
+                                <span><span id="days">00</span><span class="text-xs font-normal ml-1">Days</span></span>
+                                <span>:</span>
+                                <span><span id="hours">00</span><span class="text-xs font-normal ml-1">Hrs</span></span>
+                                <span>:</span>
+                                <span><span id="minutes">00</span><span class="text-xs font-normal ml-1">Min</span></span>
+                                <span>:</span>
+                                <span><span id="seconds">00</span><span class="text-xs font-normal ml-1">Sec</span></span>
+                            </div>
+                        </div>
+                    </div>
+                    
                 </div>
-                
                 <!-- Profile Image Placeholder -->
                 <div class="fade-in-up w-full">
                     <div class="image-placeholder aspect-square rounded-xl overflow-hidden shadow-2xl float">
@@ -118,13 +154,65 @@
                 </div>
             </div>
         </div>
-        
         <!-- Scroll Indicator -->
         <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-20 animate-bounce">
             <i class="fas fa-chevron-down text-white text-2xl"></i>
         </div>
     </section>
+
     
+    
+    
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+                <!-- About Image -->
+                <div class="fade-in-up">
+                    <div class="image-placeholder aspect-square rounded-xl overflow-hidden shadow-lg">
+                        <div class="w-full h-full flex items-center justify-center flex-col">
+                            <i class="fas fa-image text-4xl opacity-30 mb-2"></i>
+                            <p class="opacity-50">Kennedy Photo (600x800px)</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- About Content -->
+                <div class="fade-in-up">
+                    <h2 class="text-4xl md:text-5xl font-black mb-6">
+                        About <span class="gradient-text">THE REFORMIST</span>
+                    </h2>
+                    <p class="text-lg text-gray-700 mb-4">
+                        Kenedy Akampuraa is a visionary leader dedicated to reforming broken systems at Kyambogo University. With a passion for change and a commitment to excellence, Kennedy brings fresh perspectives to student leadership.
+                    </p>
+                    <p class="text-lg text-gray-700 mb-8">
+                        From community engagement to academic advocacy, Kennedy has consistently demonstrated the qualities needed to lead the Guild effectively and represent all students fairly.
+                    </p>
+                    
+                    <!-- Quick Facts -->
+                    <div class="grid grid-cols-2 gap-4">
+                        <div class="bg-blue-50 p-4 rounded-lg">
+                            <i class="fas fa-book text-blue-900 text-2xl mb-2"></i>
+                            <p class="font-semibold text-gray-800">Student Leader</p>
+                        </div>
+                        <div class="bg-amber-50 p-4 rounded-lg">
+                            <i class="fas fa-users text-amber-600 text-2xl mb-2"></i>
+                            <p class="font-semibold text-gray-800">Community Builder</p>
+                        </div>
+                        <div class="bg-blue-50 p-4 rounded-lg">
+                            <i class="fas fa-lightbulb text-blue-900 text-2xl mb-2"></i>
+                            <p class="font-semibold text-gray-800">Innovator</p>
+                        </div>
+                        <div class="bg-amber-50 p-4 rounded-lg">
+                            <i class="fas fa-heart text-amber-600 text-2xl mb-2"></i>
+                            <p class="font-semibold text-gray-800">Passionate</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Stats Section -->
     <section class="py-16 bg-gradient-to-r from-blue-900 to-blue-800 text-white">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -161,56 +249,6 @@
         </div>
     </section>
     
-    <!-- About Section -->
-    <section id="about" class="py-20 bg-white">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-                <!-- About Image -->
-                <div class="fade-in-up">
-                    <div class="image-placeholder aspect-square rounded-xl overflow-hidden shadow-lg">
-                        <div class="w-full h-full flex items-center justify-center flex-col">
-                            <i class="fas fa-image text-4xl opacity-30 mb-2"></i>
-                            <p class="opacity-50">Kennedy Photo (600x800px)</p>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- About Content -->
-                <div class="fade-in-up">
-                    <h2 class="text-4xl md:text-5xl font-black mb-6">
-                        About <span class="gradient-text">THE REFORMIST</span>
-                    </h2>
-                    <p class="text-lg text-gray-700 mb-4">
-                        Akampurura Kennedy is a visionary leader dedicated to reforming broken systems at Kyambogo University. With a passion for change and a commitment to excellence, Kennedy brings fresh perspectives to student leadership.
-                    </p>
-                    <p class="text-lg text-gray-700 mb-8">
-                        From community engagement to academic advocacy, Kennedy has consistently demonstrated the qualities needed to lead the Guild effectively and represent all students fairly.
-                    </p>
-                    
-                    <!-- Quick Facts -->
-                    <div class="grid grid-cols-2 gap-4">
-                        <div class="bg-blue-50 p-4 rounded-lg">
-                            <i class="fas fa-book text-blue-900 text-2xl mb-2"></i>
-                            <p class="font-semibold text-gray-800">Student Leader</p>
-                        </div>
-                        <div class="bg-amber-50 p-4 rounded-lg">
-                            <i class="fas fa-users text-amber-600 text-2xl mb-2"></i>
-                            <p class="font-semibold text-gray-800">Community Builder</p>
-                        </div>
-                        <div class="bg-blue-50 p-4 rounded-lg">
-                            <i class="fas fa-lightbulb text-blue-900 text-2xl mb-2"></i>
-                            <p class="font-semibold text-gray-800">Innovator</p>
-                        </div>
-                        <div class="bg-amber-50 p-4 rounded-lg">
-                            <i class="fas fa-heart text-amber-600 text-2xl mb-2"></i>
-                            <p class="font-semibold text-gray-800">Passionate</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    
     <!-- Vision Section -->
     <section id="vision" class="py-20 bg-gradient-to-br from-blue-50 to-amber-50">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -225,7 +263,7 @@
             
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
                 <!-- Vision Card 1 -->
-                <div class="card-hover bg-white p-8 rounded-xl shadow-lg overflow-hidden group">
+                <div class="card-hover glass-card p-8 rounded-xl overflow-hidden group">
                     <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-blue-900 to-amber-500"></div>
                     <div class="mb-6">
                         <div class="w-16 h-16 bg-blue-100 rounded-lg flex items-center justify-center group-hover:bg-amber-100 transition">
@@ -244,7 +282,7 @@
                 </div>
                 
                 <!-- Vision Card 2 -->
-                <div class="card-hover bg-white p-8 rounded-xl shadow-lg overflow-hidden group">
+                <div class="card-hover glass-card p-8 rounded-xl overflow-hidden group">
                     <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-amber-500 to-blue-900"></div>
                     <div class="mb-6">
                         <div class="w-16 h-16 bg-amber-100 rounded-lg flex items-center justify-center group-hover:bg-blue-100 transition">
@@ -263,7 +301,7 @@
                 </div>
                 
                 <!-- Vision Card 3 -->
-                <div class="card-hover bg-white p-8 rounded-xl shadow-lg overflow-hidden group">
+                <div class="card-hover glass-card p-8 rounded-xl overflow-hidden group">
                     <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-blue-900 to-amber-500"></div>
                     <div class="mb-6">
                         <div class="w-16 h-16 bg-blue-100 rounded-lg flex items-center justify-center group-hover:bg-amber-100 transition">
@@ -341,12 +379,11 @@
                         </div>
                     </div>
                     <div class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition flex items-center justify-center">
-                        <button class="bg-amber-500 hover:bg-amber-600 text-white p-3 rounded-full transition">
-                            <i class="fas fa-expand text-xl"></i>
+                        <button class="bg-amber-500 hover:bg-amber-600 text-white p-3 rounded-full transition ripple" onclick="openLightbox(0)">
+                            <i class="fas fa-expand text-xl icon-animate"></i>
                         </button>
                     </div>
                 </div>
-                
                 <div class="group relative overflow-hidden rounded-xl shadow-lg card-hover">
                     <div class="image-placeholder aspect-square">
                         <div class="flex flex-col items-center justify-center">
@@ -355,12 +392,11 @@
                         </div>
                     </div>
                     <div class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition flex items-center justify-center">
-                        <button class="bg-amber-500 hover:bg-amber-600 text-white p-3 rounded-full transition">
-                            <i class="fas fa-expand text-xl"></i>
+                        <button class="bg-amber-500 hover:bg-amber-600 text-white p-3 rounded-full transition ripple" onclick="openLightbox(1)">
+                            <i class="fas fa-expand text-xl icon-animate"></i>
                         </button>
                     </div>
                 </div>
-                
                 <div class="group relative overflow-hidden rounded-xl shadow-lg card-hover">
                     <div class="image-placeholder aspect-square">
                         <div class="flex flex-col items-center justify-center">
@@ -369,12 +405,11 @@
                         </div>
                     </div>
                     <div class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition flex items-center justify-center">
-                        <button class="bg-amber-500 hover:bg-amber-600 text-white p-3 rounded-full transition">
-                            <i class="fas fa-expand text-xl"></i>
+                        <button class="bg-amber-500 hover:bg-amber-600 text-white p-3 rounded-full transition ripple" onclick="openLightbox(2)">
+                            <i class="fas fa-expand text-xl icon-animate"></i>
                         </button>
                     </div>
                 </div>
-                
                 <div class="group relative overflow-hidden rounded-xl shadow-lg card-hover">
                     <div class="image-placeholder aspect-square">
                         <div class="flex flex-col items-center justify-center">
@@ -383,12 +418,11 @@
                         </div>
                     </div>
                     <div class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition flex items-center justify-center">
-                        <button class="bg-amber-500 hover:bg-amber-600 text-white p-3 rounded-full transition">
-                            <i class="fas fa-expand text-xl"></i>
+                        <button class="bg-amber-500 hover:bg-amber-600 text-white p-3 rounded-full transition ripple" onclick="openLightbox(3)">
+                            <i class="fas fa-expand text-xl icon-animate"></i>
                         </button>
                     </div>
                 </div>
-                
                 <div class="group relative overflow-hidden rounded-xl shadow-lg card-hover">
                     <div class="image-placeholder aspect-square">
                         <div class="flex flex-col items-center justify-center">
@@ -397,12 +431,11 @@
                         </div>
                     </div>
                     <div class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition flex items-center justify-center">
-                        <button class="bg-amber-500 hover:bg-amber-600 text-white p-3 rounded-full transition">
-                            <i class="fas fa-expand text-xl"></i>
+                        <button class="bg-amber-500 hover:bg-amber-600 text-white p-3 rounded-full transition ripple" onclick="openLightbox(4)">
+                            <i class="fas fa-expand text-xl icon-animate"></i>
                         </button>
                     </div>
                 </div>
-                
                 <div class="group relative overflow-hidden rounded-xl shadow-lg card-hover">
                     <div class="image-placeholder aspect-square">
                         <div class="flex flex-col items-center justify-center">
@@ -411,11 +444,31 @@
                         </div>
                     </div>
                     <div class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition flex items-center justify-center">
-                        <button class="bg-amber-500 hover:bg-amber-600 text-white p-3 rounded-full transition">
-                            <i class="fas fa-expand text-xl"></i>
+                        <button class="bg-amber-500 hover:bg-amber-600 text-white p-3 rounded-full transition ripple" onclick="openLightbox(5)">
+                            <i class="fas fa-expand text-xl icon-animate"></i>
                         </button>
                     </div>
                 </div>
+                        <!-- Lightbox Modal -->
+                        <div id="lightboxModal" class="fixed inset-0 z-50 hidden bg-black bg-opacity-80 flex items-center justify-center transition">
+                            <div class="relative max-w-2xl w-full mx-4">
+                                <button onclick="closeLightbox()" class="absolute top-2 right-2 bg-white text-blue-900 rounded-full p-2 shadow-lg icon-animate" title="Close">
+                                    <i class="fas fa-times"></i>
+                                </button>
+                                <div class="flex items-center justify-between mb-4">
+                                    <button onclick="prevLightbox()" class="bg-white text-blue-900 rounded-full p-2 shadow-lg icon-animate" title="Previous">
+                                        <i class="fas fa-chevron-left"></i>
+                                    </button>
+                                    <button onclick="nextLightbox()" class="bg-white text-blue-900 rounded-full p-2 shadow-lg icon-animate" title="Next">
+                                        <i class="fas fa-chevron-right"></i>
+                                    </button>
+                                </div>
+                                <div class="bg-white rounded-xl overflow-hidden flex items-center justify-center min-h-[300px] min-w-[300px] aspect-video">
+                                    <img id="lightboxImage" src="" alt="Gallery Image" class="max-h-[60vh] max-w-full object-contain" />
+                                </div>
+                                <div class="text-center text-white mt-4" id="lightboxCaption"></div>
+                            </div>
+                        </div>
             </div>
         </div>
     </section>
@@ -501,6 +554,66 @@
             </div>
         </div>
     </section>
+
+    <!-- Supporters Wall Section -->
+    <section id="supporters" class="py-20 bg-gradient-to-br from-blue-50 to-amber-50">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12 fade-in-up">
+                <h2 class="text-4xl md:text-5xl font-black mb-4 gradient-text">Supporters Wall</h2>
+                <p class="text-xl text-gray-700">See the faces and words of those backing Kennedy’s reform movement.</p>
+            </div>
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
+                <!-- Supporter 1 -->
+                <div class="glass-card p-6 flex flex-col items-center text-center fade-in-up">
+                    <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Supporter" class="w-20 h-20 rounded-full mb-4 border-4 border-amber-400 object-cover">
+                    <h4 class="font-bold text-blue-900 mb-1">Brian M.</h4>
+                    <p class="text-sm text-gray-600 mb-2">Faculty of Science</p>
+                    <p class="text-gray-700 italic">“Kennedy listens and acts. I trust him to deliver real change!”</p>
+                </div>
+                <!-- Supporter 2 -->
+                <div class="glass-card p-6 flex flex-col items-center text-center fade-in-up">
+                    <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Supporter" class="w-20 h-20 rounded-full mb-4 border-4 border-blue-900 object-cover">
+                    <h4 class="font-bold text-blue-900 mb-1">Sarah K.</h4>
+                    <p class="text-sm text-gray-600 mb-2">School of Education</p>
+                    <p class="text-gray-700 italic">“The Reformist team is inspiring. I’m proud to support Kennedy!”</p>
+                </div>
+                <!-- Supporter 3 -->
+                <div class="glass-card p-6 flex flex-col items-center text-center fade-in-up">
+                    <img src="https://randomuser.me/api/portraits/men/65.jpg" alt="Supporter" class="w-20 h-20 rounded-full mb-4 border-4 border-amber-400 object-cover">
+                    <h4 class="font-bold text-blue-900 mb-1">David O.</h4>
+                    <p class="text-sm text-gray-600 mb-2">Faculty of Engineering</p>
+                    <p class="text-gray-700 italic">“Kennedy’s vision is what Kyambogo needs right now.”</p>
+                </div>
+                <!-- Supporter 4 -->
+                <!--
+                <div class="glass-card p-6 flex flex-col items-center text-center fade-in-up">
+                    <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="Supporter" class="w-20 h-20 rounded-full mb-4 border-4 border-blue-900 object-cover">
+                    <h4 class="font-bold text-blue-900 mb-1">Grace N.</h4>
+                    <p class="text-sm text-gray-600 mb-2">Faculty of Arts</p>
+                    <p class="text-gray-700 italic">“I believe in Kennedy’s leadership and his promise to reform.”</p>
+                </div>
+                -->
+                <!-- Supporter 5 -->
+                <!--
+                <div class="glass-card p-6 flex flex-col items-center text-center fade-in-up">
+                    <img src="https://randomuser.me/api/portraits/men/77.jpg" alt="Supporter" class="w-20 h-20 rounded-full mb-4 border-4 border-amber-400 object-cover">
+                    <h4 class="font-bold text-blue-900 mb-1">Samuel T.</h4>
+                    <p class="text-sm text-gray-600 mb-2">School of Management</p>
+                    <p class="text-gray-700 italic">“He’s the only candidate who truly cares about students.”</p>
+                </div>
+                -->
+                <!-- Supporter 6 -->
+                <!--
+                <div class="glass-card p-6 flex flex-col items-center text-center fade-in-up">
+                    <img src="https://randomuser.me/api/portraits/women/12.jpg" alt="Supporter" class="w-20 h-20 rounded-full mb-4 border-4 border-blue-900 object-cover">
+                    <h4 class="font-bold text-blue-900 mb-1">Lydia A.</h4>
+                    <p class="text-sm text-gray-600 mb-2">Faculty of Social Sciences</p>
+                    <p class="text-gray-700 italic">“Kennedy’s campaign is about hope and real reform.”</p>
+                </div>
+                -->
+            </div>
+        </div>
+    </section>
     
     <!-- Timeline Section -->
     <section class="py-20 bg-gradient-to-br from-blue-900 to-blue-800 text-white">
@@ -524,7 +637,7 @@
                     <div class="pb-12">
                         <h3 class="text-2xl font-bold mb-2">Campaign Launch</h3>
                         <p class="text-gray-300 mb-4">Official announcement and campaign kickoff across all faculties</p>
-                        <p class="text-amber-400 font-semibold">February 2024</p>
+                        <p class="text-amber-400 font-semibold">February 2026</p>
                     </div>
                 </div>
                 
@@ -539,7 +652,7 @@
                     <div class="pb-12">
                         <h3 class="text-2xl font-bold mb-2">Student Engagements</h3>
                         <p class="text-gray-300 mb-4">Meeting with students in halls, faculties, and departments</p>
-                        <p class="text-amber-400 font-semibold">February - March 2024</p>
+                        <p class="text-amber-400 font-semibold">February - March 2026</p>
                     </div>
                 </div>
                 
@@ -554,7 +667,7 @@
                     <div class="pb-12">
                         <h3 class="text-2xl font-bold mb-2">Debates & Manifestos</h3>
                         <p class="text-gray-300 mb-4">Candidate debates and manifesto presentations</p>
-                        <p class="text-amber-400 font-semibold">March 2024</p>
+                        <p class="text-amber-400 font-semibold">March 2026</p>
                     </div>
                 </div>
                 
@@ -568,7 +681,7 @@
                     <div>
                         <h3 class="text-2xl font-bold mb-2">Election Day</h3>
                         <p class="text-gray-300 mb-4">Cast your vote for THE REFORMIST</p>
-                        <p class="text-amber-400 font-semibold">March 22, 2024</p>
+                        <p class="text-amber-400 font-semibold">March 22, 2026</p>
                     </div>
                 </div>
             </div>
@@ -720,7 +833,7 @@
                         <i class="fas fa-chevron-down text-blue-900 transition-transform"></i>
                     </button>
                     <p class="text-gray-700 mt-4 hidden">
-                        The election for the 22nd Guild President will be held on March 22, 2024. Make sure to cast your vote for THE REFORMIST!
+                        The election for the 22nd Guild President will be held on March 22, 2026. Make sure to cast your vote for THE REFORMIST!
                     </p>
                 </div>
                 
@@ -740,31 +853,97 @@
     
     <!-- Volunteer Section -->
     <section class="py-20 bg-white">
+        <div class="w-full px-0">
+            <div class="w-full bg-gradient-to-r from-blue-900 to-amber-500 rounded-none md:rounded p-0 md:p-12 text-white">
+                <div class="flex flex-col md:flex-row items-center md:items-stretch gap-10 fade-in-up">
+                    <!-- Left: Visuals and Text -->
+                    <div class="flex-1 flex flex-col justify-center items-center md:items-start text-center md:text-left mb-8 md:mb-0">
+                        <img src="https://images.unsplash.com/photo-1519125323398-675f0ddb6308?auto=format&fit=facearea&w=400&h=120&q=80&facepad=2" alt="Diverse Happy Group" class="rounded-full shadow-lg w-32 h-32 object-cover mb-4 border-4 border-amber-500">
+                        <div class="flex justify-center md:justify-start gap-4 mb-4">
+                            <span class="inline-flex items-center justify-center w-12 h-12 rounded-full bg-amber-100 text-amber-600 text-2xl"><i class="fas fa-users"></i></span>
+                            <span class="inline-flex items-center justify-center w-12 h-12 rounded-full bg-amber-100 text-amber-600 text-2xl"><i class="fas fa-hands-helping"></i></span>
+                            <span class="inline-flex items-center justify-center w-12 h-12 rounded-full bg-amber-100 text-amber-600 text-2xl"><i class="fas fa-bullhorn"></i></span>
+                            <span class="inline-flex items-center justify-center w-12 h-12 rounded-full bg-amber-100 text-amber-600 text-2xl"><i class="fas fa-heart"></i></span>
+                        </div>
+                        <h2 class="text-3xl md:text-4xl font-black mb-2">Join The Movement</h2>
+                        <p class="text-lg md:text-xl opacity-90">Help us reform broken systems. Become part of the Kennedy campaign team.</p>
+                    </div>
+                    <!-- Right: Form -->
+                    <div class="flex-1 flex flex-col justify-center">
+                        <form class="w-full space-y-4">
+                            <div class="relative">
+                                <span class="absolute left-4 top-1/2 -translate-y-1/2 text-amber-500 text-xl"><i class="fas fa-user"></i></span>
+                                <input type="text" placeholder="Your Name" class="w-full pl-12 pr-4 py-3 rounded-lg text-gray-800 focus:outline-none focus:ring-2 focus:ring-amber-400" />
+                            </div>
+                            <div class="relative">
+                                <span class="absolute left-4 top-1/2 -translate-y-1/2 text-amber-500 text-xl"><i class="fas fa-envelope"></i></span>
+                                <input type="email" placeholder="Your Email" class="w-full pl-12 pr-4 py-3 rounded-lg text-gray-800 focus:outline-none focus:ring-2 focus:ring-amber-400" />
+                            </div>
+                            <div class="relative">
+                                <span class="absolute left-4 top-1/2 -translate-y-1/2 text-amber-500 text-xl"><i class="fas fa-tasks"></i></span>
+                                <select class="w-full pl-12 pr-4 py-3 rounded-lg text-gray-800 focus:outline-none focus:ring-2 focus:ring-amber-400">
+                                    <option value="">How can you help?</option>
+                                    <option value="volunteer">Volunteer in campaigns</option>
+                                    <option value="fundraise">Help with fundraising</option>
+                                    <option value="social">Manage social media</option>
+                                    <option value="events">Organize events</option>
+                                    <option value="other">Other</option>
+                                </select>
+                            </div>
+                            <div class="relative">
+                                <span class="absolute left-4 top-4 text-amber-500 text-xl"><i class="fas fa-comment-dots"></i></span>
+                                <textarea placeholder="Tell us about yourself..." class="w-full pl-12 pr-4 py-3 rounded-lg text-gray-800 focus:outline-none focus:ring-2 focus:ring-amber-400 h-24" required></textarea>
+                            </div>
+                            <button type="submit" class="w-full bg-white text-blue-900 hover:bg-gray-100 px-8 py-4 rounded-lg font-bold text-lg transition">
+                                <i class="fas fa-hand-fist mr-2 icon-animate"></i>Join the Team
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Latest Updates / News Section -->
+    <section id="news" class="py-16 bg-gradient-to-br from-amber-50 to-blue-50">
         <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="bg-gradient-to-r from-blue-900 to-amber-500 rounded-2xl p-12 text-white">
-                <div class="text-center fade-in-up">
-                    <h2 class="text-4xl md:text-5xl font-black mb-4">
-                        Join The Movement
-                    </h2>
-                    <p class="text-xl mb-8 opacity-90">
-                        Help us reform broken systems. Become part of the Kennedy campaign team.
-                    </p>
-                    <form class="max-w-2xl mx-auto space-y-4">
-                        <input type="text" placeholder="Your Name" class="w-full px-6 py-3 rounded-lg text-gray-800 focus:outline-none focus:ring-2 focus:ring-amber-400">
-                        <input type="email" placeholder="Your Email" class="w-full px-6 py-3 rounded-lg text-gray-800 focus:outline-none focus:ring-2 focus:ring-amber-400">
-                        <select class="w-full px-6 py-3 rounded-lg text-gray-800 focus:outline-none focus:ring-2 focus:ring-amber-400">
-                            <option value="">How can you help?</option>
-                            <option value="volunteer">Volunteer in campaigns</option>
-                            <option value="fundraise">Help with fundraising</option>
-                            <option value="social">Manage social media</option>
-                            <option value="events">Organize events</option>
-                            <option value="other">Other</option>
-                        </select>
-                        <textarea placeholder="Tell us about yourself..." class="w-full px-6 py-3 rounded-lg text-gray-800 focus:outline-none focus:ring-2 focus:ring-amber-400 h-24" required></textarea>
-                        <button type="submit" class="w-full bg-white text-blue-900 hover:bg-gray-100 px-8 py-4 rounded-lg font-bold text-lg transition">
-                            <i class="fas fa-hand-fist mr-2"></i>Join the Team
-                        </button>
-                    </form>
+            <div class="text-center mb-12 fade-in-up">
+                <h2 class="text-4xl md:text-5xl font-black mb-4 gradient-text">Latest Updates</h2>
+                <p class="text-xl text-gray-700">Stay informed with the latest campaign news and announcements.</p>
+            </div>
+            <div class="space-y-8">
+                <!-- News Item 1 -->
+                <div class="glass-card p-6 flex flex-col md:flex-row items-start gap-6 fade-in-up">
+                    <div class="flex-shrink-0 w-20 h-20 bg-blue-100 rounded-xl flex items-center justify-center">
+                        <i class="fas fa-bullhorn text-blue-900 text-3xl"></i>
+                    </div>
+                    <div>
+                        <h3 class="text-2xl font-bold text-blue-900 mb-2">Campaign Launch Rally</h3>
+                        <p class="text-gray-700 mb-2">Thank you to everyone who attended our successful launch rally! Together, we are starting a new chapter for Kyambogo University.</p>
+                        <span class="text-sm text-gray-500">March 1, 2026</span>
+                    </div>
+                </div>
+                <!-- News Item 2 -->
+                <div class="glass-card p-6 flex flex-col md:flex-row items-start gap-6 fade-in-up">
+                    <div class="flex-shrink-0 w-20 h-20 bg-amber-100 rounded-xl flex items-center justify-center">
+                        <i class="fas fa-users text-amber-600 text-3xl"></i>
+                    </div>
+                    <div>
+                        <h3 class="text-2xl font-bold text-amber-600 mb-2">Student Engagements Begin</h3>
+                        <p class="text-gray-700 mb-2">Kennedy is meeting students in halls and faculties to listen to your concerns and share the vision for reform.</p>
+                        <span class="text-sm text-gray-500">March 2, 2026</span>
+                    </div>
+                </div>
+                <!-- News Item 3 -->
+                <div class="glass-card p-6 flex flex-col md:flex-row items-start gap-6 fade-in-up">
+                    <div class="flex-shrink-0 w-20 h-20 bg-blue-100 rounded-xl flex items-center justify-center">
+                        <i class="fas fa-calendar-check text-blue-900 text-3xl"></i>
+                    </div>
+                    <div>
+                        <h3 class="text-2xl font-bold text-blue-900 mb-2">Debate Dates Announced</h3>
+                        <p class="text-gray-700 mb-2">Mark your calendars! The official candidate debates will be held on March 15th and 18th. Don’t miss out!</p>
+                        <span class="text-sm text-gray-500">March 2, 2026</span>
+                    </div>
                 </div>
             </div>
         </div>
@@ -821,7 +1000,7 @@
                     <input type="text" placeholder="Subject" class="w-full px-6 py-3 border-2 border-gray-200 rounded-lg focus:outline-none focus:border-blue-900" required>
                     <textarea placeholder="Your Message" class="w-full px-6 py-3 border-2 border-gray-200 rounded-lg focus:outline-none focus:border-blue-900 h-32" required></textarea>
                     <button type="submit" class="w-full bg-gradient-to-r from-blue-900 to-amber-500 hover:shadow-lg text-white px-8 py-4 rounded-lg font-bold text-lg transition">
-                        <i class="fas fa-paper-plane mr-2"></i>Send Message
+                        <i class="fas fa-paper-plane mr-2 icon-animate"></i>Send Message
                     </button>
                 </form>
             </div>
@@ -836,7 +1015,7 @@
                 <div>
                     <h3 class="text-lg font-bold mb-4">THE REFORMIST</h3>
                     <p class="text-gray-400 mb-4">
-                        Reforming broken systems at Kyambogo University. Vote for Akampurura Kennedy for Guild President.
+                        Reforming broken systems at Kyambogo University. Vote for Kenedy Akampuraa for Guild President.
                     </p>
                     <div class="flex space-x-4">
                         <a href="#" class="text-gray-400 hover:text-amber-400 transition text-lg">
@@ -883,7 +1062,7 @@
                     <form class="flex">
                         <input type="email" placeholder="Your email" class="px-4 py-2 rounded-l-lg text-gray-800 focus:outline-none w-full">
                         <button type="submit" class="bg-amber-500 hover:bg-amber-600 px-4 py-2 rounded-r-lg font-semibold transition">
-                            <i class="fas fa-paper-plane"></i>
+                            <i class="fas fa-paper-plane icon-animate"></i>
                         </button>
                     </form>
                 </div>
@@ -893,7 +1072,7 @@
             <div class="border-t border-blue-800 pt-8">
                 <div class="flex flex-col md:flex-row justify-between items-center">
                     <p class="text-gray-400 mb-4 md:mb-0">
-                        &copy; 2024 THE REFORMIST - Akampurura Kennedy for Guild President. All rights reserved.
+                        &copy; 2026 THE REFORMIST - Kenedy Akampuraa for Guild President. All rights reserved.
                     </p>
                     <div class="flex space-x-6">
                         <a href="#" class="text-gray-400 hover:text-amber-400 transition">Privacy Policy</a>
@@ -905,9 +1084,9 @@
             <!-- Election Countdown -->
             <div class="mt-8 text-center">
                 <p class="text-amber-400 font-bold mb-2">
-                    <i class="fas fa-calendar-check mr-2"></i>Kyambogo Guild Elections 2024
+                    <i class="fas fa-calendar-check mr-2"></i>Kyambogo Guild Elections 2026
                 </p>
-                <p class="text-gray-400">Election Day: March 22, 2024</p>
+                <p class="text-gray-400">Election Day: March 22, 2026</p>
             </div>
         </div>
     </footer>
@@ -918,14 +1097,18 @@
         <a href="https://wa.me/256XXXXXXXXX" target="_blank" class="w-14 h-14 bg-green-500 hover:bg-green-600 text-white rounded-full flex items-center justify-center shadow-lg transition transform hover:scale-110" title="Chat on WhatsApp">
             <i class="fab fa-whatsapp text-2xl"></i>
         </a>
-        
+        <!-- Messenger Button -->
+        <a href="https://m.me/yourpageusername" target="_blank" class="w-14 h-14 bg-blue-600 hover:bg-blue-700 text-white rounded-full flex items-center justify-center shadow-lg transition transform hover:scale-110" title="Chat on Messenger">
+            <i class="fab fa-facebook-messenger text-2xl"></i>
+        </a>
         <!-- Scroll to Top Button -->
         <button onclick="scrollToTop()" class="w-14 h-14 bg-amber-500 hover:bg-amber-600 text-white rounded-full flex items-center justify-center shadow-lg transition transform hover:scale-110" title="Scroll to top">
-            <i class="fas fa-arrow-up text-2xl"></i>
+            <i class="fas fa-arrow-up text-2xl icon-animate"></i>
         </button>
     </div>
     
     <!-- Custom JavaScript -->
     <script src="scripts.js"></script>
 </body>
+</html>
 </html>
