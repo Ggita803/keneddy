@@ -21,12 +21,12 @@ setInterval(updateCountdown, 1000);
 updateCountdown();
 // Lightbox modal for gallery
 const galleryImages = [
-    { src: '', caption: 'Event 1 (500x400px)' },
-    { src: '', caption: 'Event 2 (500x400px)' },
-    { src: '', caption: 'Event 3 (500x400px)' },
-    { src: '', caption: 'Event 4 (500x400px)' },
-    { src: '', caption: 'Event 5 (500x400px)' },
-    { src: '', caption: 'Event 6 (500x400px)' },
+    { src: 'images/campaignMoment1.jpg', caption: 'Kickoff Rally: Inspiring the crowd' },
+    { src: 'images/campaignMoment2.jpg', caption: 'Community Outreach: Connecting with students' },
+    { src: 'images/campaignMoment3.jpg', caption: 'Leadership Forum: Sharing the vision' },
+    { src: 'images/campaignMoment4.jpg', caption: 'Team Strategy: Planning for success' },
+    { src: 'images/campaignMoment5.jpg', caption: 'Closing Event: Celebrating unity' },
+    { src: 'images/campaignMoment6.jpg', caption: 'Celebration: Together, we celebrate unity' },
 ];
 let currentLightbox = 0;
 
