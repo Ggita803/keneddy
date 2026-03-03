@@ -109,10 +109,10 @@
         <div class="relative z-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-white">
             <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
                 <div class="fade-in-up">
-                    <h1 class="text-3xl md:text-5xl font-black mb-4 leading-tight">
+                    <h1 class="text-3xl md:text-5xl font-black mb-2 leading-tight">
                         THE<br><span class="text-amber-400">REFORMIST</span>
                     </h1>
-                    <p class="text-xl md:text-2xl mb-5 text-gray-200">
+                    <p class="text-xl md:text-2xl mt-0 mb-3 text-gray-200">
                         Reforming broken systems
                     </p>
                     <p class="text-lg mb-5 text-gray-300 max-w-md">
@@ -149,8 +149,8 @@
                 </div>
                 <!-- Profile Image Placeholder -->
                 <div class="fade-in-up w-full">
-                    <div class="aspect-square rounded-xl overflow-hidden float">
-                        <img src="images/kenedy_Akampuraa.png" alt="Kenedy Akampuraa" class="w-full h-full object-cover" style="border-radius: 50%;" />
+                    <div class="aspect-[3/4] rounded-xl overflow-hidden float -mt-16">
+                        <img src="images/kenedy_Akampuraa.png" alt="Kenedy Akampuraa" class="w-full h-full object-cover" style="object-position: top center;" />
                     </div>
                 </div>
             </div>
@@ -1102,16 +1102,17 @@
     </footer>
     
     <!-- Floating Action Button -->
-    <div class="fixed bottom-8 right-8 flex flex-col gap-4 z-40">
-        <!-- WhatsApp Button -->
-        <a href="https://wa.me/256XXXXXXXXX" target="_blank" class="w-10 h-10 bg-green-500 hover:bg-green-600 text-white rounded-full flex items-center justify-center shadow-lg transition transform hover:scale-110" title="Chat on WhatsApp">
-            <i class="fab fa-whatsapp text-lg"></i>
-        </a>
-        <!-- Messenger Button -->
+    <!-- Messenger Button (Left) -->
+    <div class="fixed bottom-8 left-8 z-40">
         <a href="https://m.me/yourpageusername" target="_blank" class="w-10 h-10 bg-blue-600 hover:bg-blue-700 text-white rounded-full flex items-center justify-center shadow-lg transition transform hover:scale-110" title="Chat on Messenger">
             <i class="fab fa-facebook-messenger text-lg"></i>
         </a>
-        <!-- Scroll to Top Button -->
+    </div>
+    <!-- WhatsApp and Scroll to Top Buttons (Right) -->
+    <div class="fixed bottom-8 right-8 flex flex-col gap-4 z-40">
+        <a href="https://wa.me/256XXXXXXXXX" target="_blank" class="w-10 h-10 bg-green-500 hover:bg-green-600 text-white rounded-full flex items-center justify-center shadow-lg transition transform hover:scale-110" title="Chat on WhatsApp">
+            <i class="fab fa-whatsapp text-lg"></i>
+        </a>
         <button onclick="scrollToTop()" class="w-10 h-10 bg-amber-500 hover:bg-amber-600 text-white rounded-full flex items-center justify-center shadow-lg transition transform hover:scale-110" title="Scroll to top">
             <i class="fas fa-arrow-up text-lg icon-animate"></i>
         </button>
