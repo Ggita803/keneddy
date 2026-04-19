@@ -1,3 +1,676 @@
+/* Custom Styles for THE REFORMIST Campaign Website */
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+:root {
+    --bg-primary: #ffffff;
+    --bg-secondary: #f3f4f6;
+    --text-primary: #111827;
+    --text-secondary: #6b7280;
+    --border-color: #e5e7eb;
+    --accent-blue: #1e3a8a;
+    --accent-amber: #f59e0b;
+    --navbar-bg: rgba(255, 255, 255, 0.95);
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-fast: all 0.2s ease-out;
+}
+
+[data-theme="dark"] {
+    --bg-primary: #1f2937;
+    --bg-secondary: #111827;
+    --text-primary: #f3f4f6;
+    --text-secondary: #d1d5db;
+    --border-color: #374151;
+    --navbar-bg: rgba(31, 41, 55, 0.95);
+}
+
+* {
+    font-family: 'Outfit', sans-serif;
+}
+
+body {
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* ============================================
+   ANIMATION KEYFRAMES
+   ============================================ */
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-40px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideInRight {
+    from {
+        opacity: 0;
+        transform: translateX(40px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideOutRight {
+    from {
+        opacity: 1;
+        transform: translateX(0);
+    }
+    to {
+        opacity: 0;
+        transform: translateX(400px);
+    }
+}
+
+@keyframes scaleIn {
+    from {
+        opacity: 0;
+        transform: scale(0.95);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes pulse-glow {
+    0%, 100% {
+        box-shadow: 0 0 20px rgba(245, 158, 11, 0.5);
+    }
+    50% {
+        box-shadow: 0 0 30px rgba(245, 158, 11, 0.8);
+    }
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(-20px);
+    }
+}
+
+@keyframes countUp {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes rippleEffect {
+    to {
+        width: 300px;
+        height: 300px;
+        opacity: 0;
+        transform: translate(-50%, -50%);
+    }
+}
+
+/* ============================================
+   SCROLL ANIMATIONS
+   ============================================ */
+
+.fade-in-up {
+    opacity: 0;
+    animation: fadeInUp 0.6s ease-out forwards;
+}
+
+.fade-in-down {
+    opacity: 0;
+    animation: fadeInDown 0.5s ease-out forwards;
+}
+
+.slide-in-left {
+    opacity: 0;
+    animation: slideInLeft 0.6s ease-out forwards;
+}
+
+.slide-in-right {
+    opacity: 0;
+    animation: slideInRight 0.6s ease-out forwards;
+}
+
+.scale-in {
+    opacity: 0;
+    animation: scaleIn 0.6s ease-out forwards;
+}
+
+.animation-delay-1 { animation-delay: 0.1s; }
+.animation-delay-2 { animation-delay: 0.2s; }
+.animation-delay-3 { animation-delay: 0.3s; }
+.animation-delay-4 { animation-delay: 0.4s; }
+.animation-delay-5 { animation-delay: 0.5s; }
+
+.pulse-glow {
+    animation: pulse-glow 2s ease-in-out infinite;
+}
+
+.float {
+    animation: float 3s ease-in-out infinite;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+/* ============================================
+   NAVBAR STYLING
+   ============================================ */
+
+.navbar {
+    transition: var(--transition-smooth);
+}
+
+.navbar.scrolled {
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    background-color: var(--navbar-bg);
+}
+
+.navbar.scrolled.nav-active {
+    background-color: rgba(255, 255, 255, 0.98);
+}
+
+/* Navigation Links with Active Indicator */
+.nav-link {
+    position: relative;
+    transition: var(--transition-fast);
+    padding-bottom: 8px;
+}
+
+.nav-link:hover {
+    color: #1e3a8a !important;
+    font-weight: 600;
+}
+
+.nav-link.active {
+    color: #1e3a8a !important;
+    font-weight: 700;
+}
+
+.nav-link.active::after {
+    content: '';
+    position: absolute;
+    bottom: -8px;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, #1e3a8a, #f59e0b);
+    border-radius: 2px;
+    animation: slideInRight 0.3s ease-out;
+}
+
+/* ============================================
+   BUTTONS & INTERACTIVE ELEMENTS
+   ============================================ */
+
+button, a, .btn {
+    transition: var(--transition-smooth);
+}
+
+button:hover, a:hover, .btn:hover {
+    transform: translateY(-2px);
+}
+
+button:active, .btn:active {
+    transform: translateY(0);
+}
+
+/* Primary Button Hover Effects */
+.bg-amber-500:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px rgba(245, 158, 11, 0.3);
+}
+
+.bg-blue-900:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px rgba(30, 58, 138, 0.3);
+}
+
+.bg-green-600:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px rgba(22, 163, 74, 0.3);
+}
+
+.bg-purple-600:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px rgba(147, 51, 234, 0.3);
+}
+
+/* Icon Animation on Hover */
+.icon-animate {
+    transition: transform 0.3s cubic-bezier(0.4, 2, 0.6, 1), color 0.2s;
+    display: inline-block;
+}
+
+.icon-animate:hover {
+    transform: scale(1.2) rotate(-8deg);
+    color: #f59e0b !important;
+}
+
+/* ============================================
+   CARD HOVER EFFECTS
+   ============================================ */
+
+.card-hover {
+    transition: var(--transition-smooth);
+    border: 1px solid transparent;
+}
+
+.card-hover:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+    border-color: rgba(245, 158, 11, 0.2);
+}
+
+/* Glass Card Hover */
+.glass-card {
+    background: rgba(255, 255, 255, 0.25);
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.18);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border-radius: 1rem;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    transition: var(--transition-smooth);
+}
+
+.glass-card:hover {
+    background: rgba(255, 255, 255, 0.35);
+    box-shadow: 0 12px 40px 0 rgba(31, 38, 135, 0.25);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    transform: translateY(-4px);
+}
+
+[data-theme="dark"] .glass-card {
+    background: rgba(31, 41, 55, 0.4);
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+[data-theme="dark"] .glass-card:hover {
+    background: rgba(31, 41, 55, 0.6);
+    box-shadow: 0 12px 40px 0 rgba(0, 0, 0, 0.4);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* ============================================
+   GRADIENT TEXT
+   ============================================ */
+
+.gradient-text {
+    background: linear-gradient(135deg, #1e3a8a 0%, #f59e0b 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    transition: var(--transition-fast);
+}
+
+.gradient-text:hover {
+    filter: brightness(1.1);
+}
+
+/* ============================================
+   IMAGE PLACEHOLDERS & IMAGE EFFECTS
+   ============================================ */
+
+.image-placeholder {
+    background: linear-gradient(135deg, #dbeafe 0%, #fbbf24 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #1e3a8a;
+    font-size: 14px;
+    font-weight: 500;
+    transition: var(--transition-smooth);
+}
+
+.image-placeholder:hover {
+    filter: brightness(1.05);
+    transform: scale(1.02);
+}
+
+img {
+    transition: var(--transition-smooth);
+}
+
+img:hover {
+    filter: brightness(1.05) contrast(1.05);
+}
+
+.group:hover img {
+    filter: brightness(0.9) contrast(1.1);
+}
+
+/* ============================================
+   FORM INPUTS & INTERACTIVE INPUTS
+   ============================================ */
+
+input, textarea, select {
+    transition: var(--transition-smooth);
+    border: 2px solid var(--border-color);
+}
+
+input:hover, textarea:hover, select:hover {
+    border-color: #1e3a8a;
+    box-shadow: 0 0 0 3px rgba(30, 58, 138, 0.1);
+}
+
+input:focus, textarea:focus, select:focus {
+    border-color: #1e3a8a !important;
+    box-shadow: 0 0 0 4px rgba(30, 58, 138, 0.15);
+    outline: none;
+}
+
+input::placeholder, textarea::placeholder {
+    transition: color 0.3s ease;
+}
+
+input:focus::placeholder, textarea:focus::placeholder {
+    color: #9ca3af;
+}
+
+/* ============================================
+   LINK STYLING
+   ============================================ */
+
+a {
+    transition: var(--transition-smooth);
+    position: relative;
+}
+
+a:hover {
+    color: #f59e0b;
+}
+
+/* ============================================
+   COUNTDOWN TIMER MOBILE
+   ============================================ */
+
+@media (max-width: 640px) {
+    .countdown-timer {
+        overflow-x: auto;
+        padding-left: 8px;
+        padding-right: 8px;
+        min-width: 0;
+        max-width: 90vw;
+        width: 100%;
+        margin-left: auto;
+        margin-right: auto;
+        box-sizing: border-box;
+        font-size: 1.25rem !important;
+    }
+}
+
+/* ============================================
+   RIPPLE EFFECT FOR BUTTONS
+   ============================================ */
+
+.ripple {
+    position: relative;
+    overflow: hidden;
+}
+
+.ripple:after {
+    content: '';
+    display: block;
+    position: absolute;
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+    left: 50%;
+    top: 50%;
+    pointer-events: none;
+    background: rgba(245, 158, 11, 0.3);
+    transform: translate(-50%, -50%) scale(0);
+    opacity: 0;
+    transition: transform 0.4s, opacity 0.8s;
+}
+
+.ripple:active:after {
+    transform: translate(-50%, -50%) scale(2.5);
+    opacity: 1;
+    transition: 0s;
+}
+
+/* ============================================
+   DARK MODE TOGGLE
+   ============================================ */
+
+#darkModeToggle, #darkModeToggleMobile {
+    transition: var(--transition-smooth);
+    cursor: pointer;
+}
+
+#darkModeToggle:hover, #darkModeToggleMobile:hover {
+    transform: rotate(20deg) scale(1.2);
+    color: #f59e0b;
+}
+
+#darkModeToggle:active, #darkModeToggleMobile:active {
+    transform: rotate(20deg) scale(0.95);
+}
+
+/* ============================================
+   TOAST NOTIFICATIONS
+   ============================================ */
+
+.toast {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    background: linear-gradient(135deg, #1e3a8a 0%, #f59e0b 100%);
+    color: white;
+    padding: 1rem 1.5rem;
+    border-radius: 0.5rem;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+    animation: slideInRight 0.3s ease-out, slideOutRight 0.3s ease-in 2.7s forwards;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    font-weight: 600;
+    max-width: 300px;
+    backdrop-filter: blur(8px);
+}
+
+@media (max-width: 640px) {
+    .toast {
+        bottom: 1rem;
+        right: 1rem;
+        left: 1rem;
+        max-width: none;
+    }
+}
+
+/* ============================================
+   TESTIMONIAL CAROUSEL
+   ============================================ */
+
+.carousel-container {
+    position: relative;
+    overflow: hidden;
+}
+
+.carousel-slide {
+    animation: fadeInUp 0.6s ease-out forwards;
+}
+
+.carousel-controls {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 1.5rem;
+}
+
+.carousel-dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: #d1d5db;
+    cursor: pointer;
+    transition: var(--transition-smooth);
+    border: 2px solid transparent;
+}
+
+.carousel-dot:hover {
+    background-color: #9ca3af;
+    transform: scale(1.1);
+}
+
+.carousel-dot.active {
+    background-color: #1e3a8a;
+    border-color: #f59e0b;
+    transform: scale(1.3);
+    box-shadow: 0 0 10px rgba(30, 58, 138, 0.5);
+}
+
+/* ============================================
+   POLICY ACCORDION
+   ============================================ */
+
+.policy-chevron {
+    transition: transform 0.3s ease;
+    display: inline-block;
+}
+
+.policy-chevron.rotated {
+    transform: rotate(180deg);
+}
+
+/* ============================================
+   COUNTER ANIMATION
+   ============================================ */
+
+.counter {
+    animation: countUp 1s ease-out;
+    transition: var(--transition-smooth);
+}
+
+.counter:hover {
+    transform: scale(1.05);
+    color: #f59e0b;
+}
+
+/* ============================================
+   MATERIAL DESIGN RIPPLE ON CLICK
+   ============================================ */
+
+button, a.transition {
+    position: relative;
+}
+
+button:active::after, a.transition:active::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.5);
+    animation: rippleEffect 0.6s ease-out;
+    pointer-events: none;
+}
+
+/* ============================================
+   SECTION & TYPOGRAPHY EFFECTS
+   ============================================ */
+
+section {
+    transition: background-color 0.3s ease;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    transition: color 0.3s ease;
+}
+
+h2:hover, h3:hover {
+    color: #f59e0b;
+}
+
+/* ============================================
+   BADGE/TAG HOVER EFFECTS
+   ============================================ */
+
+[class*="badge"], [class*="tag"], [class*="label"], .inline-block {
+    transition: var(--transition-smooth);
+}
+
+[class*="badge"]:hover, [class*="tag"]:hover, [class*="label"]:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* ============================================
+   PROGRESS BAR ANIMATION
+   ============================================ */
+
+.progress-bar, .bg-blue-900, .bg-amber-500, .bg-green-600, .bg-purple-600 {
+    transition: width 0.5s cubic-bezier(0.4, 0, 0.2, 1), background-color 0.3s ease;
+}
+
+/* ============================================
+   RESPONSIVE HOVER ADJUSTMENTS
+   ============================================ */
+
+@media (max-width: 768px) {
+    .card-hover:hover {
+        transform: translateY(-5px);
+    }
+    
+    button:hover {
+        transform: translateY(-2px);
+    }
+    
+    .glass-card:hover {
+        transform: translateY(-3px);
+    }
+}
+
+/* ============================================
+   ACCESSIBILITY - REDUCED MOTION
+   ============================================ */
+
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+}
 /* Prevent countdown timer cutoff on mobile */
 @media (max-width: 640px) {
     .countdown-timer {

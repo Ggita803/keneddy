@@ -1,4 +1,37 @@
 // ============================================
+// SCROLL ANIMATION OBSERVER
+// ============================================
+function initScrollAnimations() {
+    const observerOptions = {
+        threshold: 0.1,
+        rootMargin: '0px 0px -100px 0px'
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                // Add animation classes
+                entry.target.classList.add('fade-in-up');
+                
+                // Add staggered delay to children
+                const children = entry.target.querySelectorAll('[class*="animation-delay"]');
+                children.forEach((child, index) => {
+                    const randomDelay = Math.random() * 0.3;
+                    child.style.animationDelay = `${randomDelay}s`;
+                });
+                
+                observer.unobserve(entry.target);
+            }
+        });
+    }, observerOptions);
+
+    // Observe all elements with animation classes
+    document.querySelectorAll('.fade-in-up, .slide-in-left, .slide-in-right, .scale-in, .card-hover').forEach(el => {
+        observer.observe(el);
+    });
+}
+
+// ============================================
 // DARK MODE TOGGLE
 // ============================================
 function initDarkMode() {
@@ -276,8 +309,8 @@ function goToTestimonial(index) {
 // ELECTION COUNTDOWN TIMER
 // ============================================
 function updateCountdown() {
-    // Set election date (March 22, 2026, 08:00:00)
-    const electionDate = new Date('2026-03-22T08:00:00');
+    // Set election date (May 8, 2026, 08:00:00)
+    const electionDate = new Date('2026-05-08T08:00:00');
     const now = new Date();
     const diff = electionDate - now;
     if (diff <= 0) {
@@ -440,6 +473,7 @@ document.addEventListener('DOMContentLoaded', () => {
     initDarkMode();
     initStickyNav();
     initTestimonialCarousel();
+    initScrollAnimations();
     handleStickyVoteBtn();
     
     // Add pledge forms

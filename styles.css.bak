@@ -1,0 +1,477 @@
+/* Prevent countdown timer cutoff on mobile */
+@media (max-width: 640px) {
+    .countdown-timer {
+        overflow-x: auto;
+        padding-left: 8px;
+        padding-right: 8px;
+        min-width: 0;
+    }
+}
+/* Countdown timer width adjustment for mobile */
+@media (max-width: 640px) {
+    .countdown-timer {
+        max-width: 90vw;
+        width: 100%;
+        margin-left: auto;
+        margin-right: auto;
+        box-sizing: border-box;
+    }
+}
+/* Countdown timer font size adjustment for mobile */
+@media (max-width: 640px) {
+    .countdown-timer {
+        font-size: 1.25rem !important; /* Reduce font size for mobile */
+    }
+}
+/* Ripple effect for buttons */
+.ripple {
+    position: relative;
+    overflow: hidden;
+}
+.ripple:after {
+    content: '';
+    display: block;
+    position: absolute;
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+    left: 50%;
+    top: 50%;
+    pointer-events: none;
+    background: rgba(245, 158, 11, 0.3);
+    transform: translate(-50%, -50%) scale(0);
+    opacity: 0;
+    transition: transform 0.4s, opacity 0.8s;
+}
+.ripple:active:after {
+    transform: translate(-50%, -50%) scale(2.5);
+    opacity: 1;
+    transition: 0s;
+}
+
+/* Icon hover animation */
+.icon-animate {
+    transition: transform 0.2s cubic-bezier(.4,2,.6,1), color 0.2s;
+}
+.icon-animate:hover {
+    transform: scale(1.2) rotate(-8deg);
+    color: #f59e0b !important;
+}
+.glass-card {
+    background: rgba(255, 255, 255, 0.25);
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.18);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border-radius: 1rem;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    transition: box-shadow 0.3s, background 0.3s;
+}
+/* Custom Styles for THE REFORMIST Campaign Website */
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+:root {
+    --bg-primary: #ffffff;
+    --bg-secondary: #f3f4f6;
+    --text-primary: #111827;
+    --text-secondary: #6b7280;
+    --border-color: #e5e7eb;
+    --accent-blue: #1e3a8a;
+    --accent-amber: #f59e0b;
+    --navbar-bg: rgba(255, 255, 255, 0.95);
+}
+
+[data-theme="dark"] {
+    --bg-primary: #1f2937;
+    --bg-secondary: #111827;
+    --text-primary: #f3f4f6;
+    --text-secondary: #d1d5db;
+    --border-color: #374151;
+    --navbar-bg: rgba(31, 41, 55, 0.95);
+}
+
+* {
+    font-family: 'Outfit', sans-serif;
+}
+
+body {
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Custom animations */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes pulse-glow {
+    0%, 100% {
+        box-shadow: 0 0 20px rgba(245, 158, 11, 0.5);
+    }
+    50% {
+        box-shadow: 0 0 30px rgba(245, 158, 11, 0.8);
+    }
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(-20px);
+    }
+}
+
+@keyframes countUp {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideRight {
+    from {
+        opacity: 0;
+        transform: translateX(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.fade-in-up {
+    animation: fadeInUp 0.6s ease-out forwards;
+    opacity: 0;
+}
+
+.slide-in-down {
+    animation: slideInDown 0.5s ease-out forwards;
+}
+
+.animation-delay-1 { animation-delay: 0.1s; }
+.animation-delay-2 { animation-delay: 0.2s; }
+.animation-delay-3 { animation-delay: 0.3s; }
+.animation-delay-4 { animation-delay: 0.4s; }
+
+.pulse-glow {
+    animation: pulse-glow 2s ease-in-out infinite;
+}
+
+.float {
+    animation: float 3s ease-in-out infinite;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+.navbar {
+    transition: all 0.3s ease;
+}
+
+.navbar.scrolled {
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    background-color: var(--navbar-bg);
+}
+
+.navbar.scrolled.nav-active {
+    background-color: rgba(255, 255, 255, 0.98);
+}
+
+/* Sticky nav active indicator */
+.nav-link {
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+.nav-link.active::after {
+    content: '';
+    position: absolute;
+    bottom: -8px;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, #1e3a8a, #f59e0b);
+    border-radius: 2px;
+    animation: slideInDown 0.3s ease-out;
+}
+
+.card-hover {
+    transition: all 0.3s ease;
+}
+
+.card-hover:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+}
+
+.gradient-text {
+    background: linear-gradient(135deg, #1e3a8a 0%, #f59e0b 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.image-placeholder {
+    background: linear-gradient(135deg, #dbeafe 0%, #fbbf24 100%);
+    display: flex;
+    align-items: center;
+    justify-center;
+    color: #1e3a8a;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+/* Prevent countdown timer cutoff on mobile */
+@media (max-width: 640px) {
+    .countdown-timer {
+        overflow-x: auto;
+        padding-left: 8px;
+        padding-right: 8px;
+        min-width: 0;
+    }
+}
+/* Countdown timer width adjustment for mobile */
+@media (max-width: 640px) {
+    .countdown-timer {
+        max-width: 90vw;
+        width: 100%;
+        margin-left: auto;
+        margin-right: auto;
+        box-sizing: border-box;
+    }
+}
+/* Countdown timer font size adjustment for mobile */
+@media (max-width: 640px) {
+    .countdown-timer {
+        font-size: 1.25rem !important; /* Reduce font size for mobile */
+    }
+}
+
+/* Ripple effect for buttons */
+.ripple {
+    position: relative;
+    overflow: hidden;
+}
+.ripple:after {
+    content: '';
+    display: block;
+    position: absolute;
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+    left: 50%;
+    top: 50%;
+    pointer-events: none;
+    background: rgba(245, 158, 11, 0.3);
+    transform: translate(-50%, -50%) scale(0);
+    opacity: 0;
+    transition: transform 0.4s, opacity 0.8s;
+}
+.ripple:active:after {
+    transform: translate(-50%, -50%) scale(2.5);
+    opacity: 1;
+    transition: 0s;
+}
+
+/* Icon hover animation */
+.icon-animate {
+    transition: transform 0.2s cubic-bezier(.4,2,.6,1), color 0.2s;
+}
+.icon-animate:hover {
+    transform: scale(1.2) rotate(-8deg);
+    color: #f59e0b !important;
+}
+
+.glass-card {
+    background: rgba(255, 255, 255, 0.25);
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.18);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border-radius: 1rem;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    transition: box-shadow 0.3s, background 0.3s;
+}
+
+[data-theme="dark"] .glass-card {
+    background: rgba(31, 41, 55, 0.4);
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Dark mode toggle button */
+#darkModeToggle {
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+#darkModeToggle:hover {
+    transform: rotate(20deg) scale(1.1);
+}
+
+/* Toast notification styling */
+.toast {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    background: linear-gradient(135deg, #1e3a8a 0%, #f59e0b 100%);
+    color: white;
+    padding: 1rem 1.5rem;
+    border-radius: 0.5rem;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+    animation: slideInRight 0.3s ease-out, slideLeft 0.3s ease-in 2.7s forwards;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    font-weight: 600;
+    max-width: 300px;
+}
+
+@keyframes slideInRight {
+    from {
+        opacity: 0;
+        transform: translateX(400px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideOutRight {
+    from {
+        opacity: 1;
+        transform: translateX(0);
+    }
+    to {
+        opacity: 0;
+        transform: translateX(400px);
+    }
+}
+
+/* Responsive for mobile toast */
+@media (max-width: 640px) {
+    .toast {
+        bottom: 1rem;
+        right: 1rem;
+        left: 1rem;
+        max-width: none;
+    }
+}
+
+/* Testimonial carousel */
+.carousel-container {
+    position: relative;
+    overflow: hidden;
+}
+
+.carousel-slide {
+    animation: fadeInUp 0.6s ease-out forwards;
+}
+
+.carousel-controls {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 1.5rem;
+}
+
+.carousel-dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: #d1d5db;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+}
+
+.carousel-dot.active {
+    background-color: #1e3a8a;
+    border-color: #f59e0b;
+    transform: scale(1.2);
+}
+
+/* Policy accordion */
+.policy-chevron {
+    transition: transform 0.3s ease;
+}
+
+.policy-chevron.rotated {
+    transform: rotate(180deg);
+}
+
+/* Counter animation */
+.counter {
+    animation: countUp 1s ease-out;
+}
+
+/* Material Design ripple on click */
+button, a.transition {
+    position: relative;
+}
+
+button:active::after, a.transition:active::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.5);
+    animation: rippleEffect 0.6s ease-out;
+    pointer-events: none;
+}
+
+@keyframes rippleEffect {
+    to {
+        width: 300px;
+        height: 300px;
+        opacity: 0;
+        transform: translate(-50%, -50%);
+    }
+}
+
+/* Smooth transitions for form inputs */
+input, textarea, select {
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+input:focus, textarea:focus, select:focus {
+    border-color: #1e3a8a !important;
+    box-shadow: 0 0 0 3px rgba(30, 58, 138, 0.1);
+}
+
